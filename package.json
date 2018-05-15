@@ -1,0 +1,14 @@
+{
+  "name": "diagrammer",
+  "version": "1.0.0",
+  "description": "demo joint js project",
+  "main": "backbone.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "graph"
+  ],
+  "author": "ambar rana",
+  "license": "ISC"
+}

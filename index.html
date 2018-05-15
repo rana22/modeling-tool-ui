@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="canvas.css">
+	<link rel="stylesheet" type="text/css" href="css/joint.min.css" />
+
+	<style type="text/css">
+
+	  row. row-offcanvaserow-offcanvas-right{
+   margin-top: 80px;} 
+
+	.canvasContainer {
+     border-top: 1px solid #eeeeee !important;
+     box-shadow: 0 3px 5px rgba(01 0, 0, O);
+     display: inline-flex;
+     margin: 0 auto;
+     width: auto;
+     border: 2px solid;
+	}
+	.form-control {
+    margin: 0px 15px 10px 0px;
+    }
+
+ .half-width {
+     width: 44%;
+   	float: left;
+   } 
+
+ .slider {
+    margin-bottom: lepx;
+     width: 100% !important;
+	}
+
+h4 {
+   margin-bottom: 3px;
+   }
+
+h3#headerId{
+	color: white;
+}
+
+
+h4 {
+}        margin-bottom: 3px;
+
+hUheadeadf
+}         color: #ffffff;                                             A.
+/*custom Rectangle*/
+.html-element {
+         position: absolute;
+         /*background: #3498DB;*/
+         /* Make sure events are propagated to t*/
+         pointer-events: none;
+         -webkit-user-select: none;
+         border-radius: 4px;
+         border: 2px solid rgba(255, 0, 0, 0.5);
+         /*box-shadow: inset 0 0 5px black, 2px*/
+         padding: 5px;
+         box-sizing: border-box;
+         margin-left: 15px;
+
+}
+
+  .html-element select,
+  .html-element input,
+  .html-element button {
+        /* Enable interacting with inputs only. */
+        pointer-events: auto;
+       overflow: hidden !important;
+   }
+ .html-element button.delete{
+        color: white;
+        border: none;
+      background-color: #CO392B;
+        border-radius: 20px;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: middle;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;cursor: pointer;
+}       
+ .html-element button.delete:hover{
+        width: 20px;
+        height: 20px;
+      line-height: 20px;
+      } 
+
+      .html-element select {
+  position: absolute;
+  right: 2px;
+  bottom: 28px;
+}
+
+.html-element button {
+  position: absolute;
+  bottom: Opx;
+  left: 120px;
+  right: 0;
+  border: none;
+  color: #333;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+} 
+
+ghtml-element{
+	position: absolute;
+  bottom: 0;
+  right: 5px;
+  border: : none;
+  color: #333;
+  padding: 5px;
+ height: 15px;
+  width: 20px;
+  overflow: hidden;
+}
+  .html-element label {
+  color: #333;
+  text-shadow: 1px 0 0 lightgray;
+  font-weight: bold;
+  overflow: hidden;
+} 
+.html-element span {
+  position: absolute;
+  top: 2px;
+  right: 9px;
+  color: white;
+  font-size: 10px;
+} 
+
+path.marker-arrowhead{
+
+  color: 'black';
+}
+	</style>
+
+</head>
+<body>
+
+
+<div class="container">
+
+<!-- <div class="row row-offcanvas row-offcanvas-right">
+ 4div.classecol-xs-6 col-sm-3 side-bar"). 
+  <d iv idelookUp">
+  <labet >4113>Properties:</h3>qtabels4br> 
+  <div id="form">
+
+  </dim>
+
+  <!-- <span><h4>Name:</h4></span> -->
+  <input type="hidden" id="UUID" value ="">
+   <input class="form-control" type="text" id="enterName" placeholder="Text">
+
+  <button id= "updatePro" classebtn">Update</button>
+ </div> 
+
+  <br>
+     <span><h4>Controls:</h4></span><br>
+
+   <button id="addParentElement" class="btn btn-default">Parent Object</button> 
+   <button id="createBox" class="btn btn-default">Box</button>
+   <button id="createCircle" class="btn btn-default">Circle</button> 
+   <button id="createLink" class="btn btn-default">Link</button>
+   <br><br><label>Get graph by Id</label>
+   <input type="number" id="graphld" width="200px">
+   <br><br>
+   <div>
+    <button id="saveDiagram" class="btn btn-primary">Save</button> 
+    <button id="graphOne" class="btn">Get graph</button>
+   <button class="btn btn-info" id="generateRaci">Generate RACI</button>
+   </div>
+
+   <span><h5>App/DOC/Failure Model/Cause</h5></span><br>
+   <input type="button" id="addStrategicRisk" class="btn btnwarning" value="Failure_Mode"> 
+   <input type="button" id="addLegalRisk" class="btn btn-danger" value="App">
+   <input type="button" id="addComplienceRisk" class="btn btn-default" value="DOC"> 
+   <input type="button" id="addCause" class="btn btn-info" value="Cause">
+   <input type="button" id="addControl" class="btn btn-info" value="Contror">
+
+
+  </div>
+
+  <!--             sidebar offcanvas end         -->
+
+  <div class="col-xs-12 col-sm-9">
+
+    <div class="canvasContainer pull-left" > 
+     <div id="myCanvas">
+      <!-- <input id="graphId" value="" type="hidden">  -->
+     </div>
+    </div>
+
+   </div><!-- /scol -xs -12.col -sm -9 --> 
+  </div><!--/row-->
+ </div>
+<div id="myCanvas"></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/lodash.min.js"></script>
+  <script src="js/backbone-min.js"></script>
+  <script src="node_modules/backform/src/backform.js"></script>
+  <script src="js/joint.min.js"></script>
+  <script src="canvas.js"></script>
+<script>
+// var graph = new joint.dia.Graph;
+// 	var paper = new joint.dia.Paper({ el: $('#myCanvas'), width: 1000, height: 800, gridSize: 1, model: graph });
+
+
+</script>
+
+
+</body>
+</html>
